@@ -22,7 +22,9 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`app is running on port ${process.env.PORT}`)
+});
 
 //root page get 
 app.get('/', (req, res) => {
